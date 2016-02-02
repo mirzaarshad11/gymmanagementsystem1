@@ -1,0 +1,80 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*<link href="~/Content/Blackbackground.css" rel="stylesheet" />*@
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap.js"></script>
+    <title>View</title>
+</head>
+<body>
+   @* <div class="header">
+        <div id="img1" class="header">
+            <img src="~/Content/Images/gymlogo.jpg" />
+        </div>
+        <div id="form1" class="header">
+           <h1>@ViewBag.gymname</h1>
+        </div>
+    </div>
+    <div class="bodyx">
+        <div class="bodyx1">
+            <h1>Member's Detail</h1><br /><br />
+            <form method="post" action="/Member/UpdateDetails">
+            Roll No.<input type="text" readonly="kk" name="Rollno" value="@Model.Rollno" class="setbox" /> 
+            Name<input type="text" name="Name" value="@Model.Name" class="setbox" /><br /><br />
+            Address<input type="text" name="Address" value="@Model.Address" class="setbox" /> 
+            Addmision Date<input type="datetime" name="Date" value="@Model.Date" class="setbox" /><br /><br />
+            Fee<input type="text" name="Fee" value="@Model.Fee" class="setbox" /> 
+            Fee Submit Date<input type="datetime" name="Feedate" value="@Model.Feedate" class="setbox" /><br /><br />
+            CNIC <input type="text" name="Cnic" value="@Model.Cnic" class="setbox" /> 
+            Cell No.<input type="text" name="Cellno" value="@Model.Cellno" class="setbox" /><br /><br />
+            <input type="submit" value="Update" /> 
+            </form>
+            <a href="/Home/Login">Cancel</a>
+         </div>
+        <div class="bodyx3">
+           
+        </div>
+    </div>*@
+
+    <div class="row" style="text-align:center">
+        <h1>@ViewBag.gymname</h1><br />
+        <h1>Member's Detail</h1>
+    </div>
+    <form method="post" action="/Member/UpdateDetails">
+    <div class="row">
+       <div class="col-md-2">
+           Roll No. <br /><br />
+           Name <br /><br />
+           Address <br /><br />
+           Admission Date <br /><br />
+       </div>
+        <div class="col-xs-4" style="color:black">
+            <input  type="text" readonly="kk" name="Rollno" value="@Model.Rollno" class="setbox" /><br /><br />
+            <input type="text" name="Name" value="@Model.Name" class="setbox" /><br /><br />
+            <input type="text" name="Address" value="@Model.Address" class="setbox" /><br /><br />
+            <input type="datetime" name="Date" value="@Model.Date" class="setbox" /><br /><br />
+            <input type="submit" value="Update" class="btn btn-success" />
+        </div>
+        <div class="col-xs-2">
+            Fee <br /><br />
+            Fee Submit Date <br /><br />
+            CNIC <br /><br />
+            Cell No. <br /><br />
+        </div>
+        <div class="col-xs-4" style="color:black">
+            <input type="text" name="Fee" value="@Model.Fee" class="setbox" /><br /><br />
+            <input type="datetime" name="Feedate" value="@Model.Feedate" class="setbox" /><br /><br />
+            <input type="text" name="Cnic" value="@Model.Cnic" class="setbox" /><br /><br />
+            <input type="text" name="Cellno" value="@Model.Cellno" class="setbox" /><br /><br />
+            <a href="/Home/Login">Cancel</a>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

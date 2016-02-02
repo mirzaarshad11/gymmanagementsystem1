@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*<link href="~/Content/Blackbackground.css" rel="stylesheet" />*@
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap.js"></script>
+    <title>ViewUpdate</title>
+</head>
+<body>
+    @*<div class="header">
+        <div id="img1" class="header">
+            <img src="~/Content/Images/gymlogo.jpg" />
+        </div>
+        <div id="form1" class="header">
+           <h1>@ViewBag.gymname</h1>
+        </div>
+    </div>
+    <div class="bodyx">
+        <div class="bodyx1">
+            <h1>Member's Detail</h1><br /><br />
+            <form method="post" action="/Member/ViewDetails">
+            <input type="text" name="Rollno" placeholder="Enter Roll No." class="mailbox" /> 
+            <input type="submit" value="Check/Update Details" />
+            </form>
+         </div>
+        <div class="bodyx3">
+           
+        </div>
+    </div>*@
+    <div class="row" style="text-align:center">
+        <h1>@ViewBag.gymname</h1><br />
+        <h1>Member's Detail</h1>
+    </div>
+    <div class="row form-group" style="text-align:center">
+        <br /><br />
+            <form method="post" action="/Member/ViewDetails">
+            <input type="text" name="Rollno" placeholder="Enter Roll No." class="mailbox" /> 
+                <br /><br /><br />
+                <br /><br />
+            <input type="submit" value="Check/Update Details" class="btn btn-success" />
+            </form>
+    </div>
+</body>
+</html>

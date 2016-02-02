@@ -1,0 +1,152 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GymManagementSystem</title>
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    @*<link href="~/Content/Site.css" rel="stylesheet" />*@
+    <link rel="icon" type="image/png" href="~/Content/Images/icongym.png" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap.js"></script>
+    <script>
+        function ValidateForm() {
+            $('span.err').html('');
+            var success = true;
+            $(".userId input").each(function () {
+                if ($(this).val() == "") {
+                    $(this).next().html("please fill this feild");
+                    success = false;
+                }
+            });
+            return success;
+        }
+
+        $(document).ready(function () {
+            $("#sub1").on("click", function () {
+                var a = $("#pwd").val();
+                var b = $("#repwd").val();
+                var bool = true;
+                if (a != b) {
+                    alert("Password not match");
+                    bool = false;
+                }
+                return bool;
+            });
+        });
+
+        function signForm() {
+            $('span.err').html('');
+            var success = true;
+            $(".signId input").each(function () {
+                if ($(this).val() == "") {
+                    $(this).next().html("please fill this feild");
+                    success = false;
+                }
+                else if ($("#pwd").val().length < 6)
+                {
+                    $("#pwd").next().html("password length minimum 6");
+                    success = false;
+                }
+                else if (!$('input[name="Gender"]').is(':checked')) {
+                    alert("Please select Gender");
+                    success = false;
+                    return success;
+                }
+            });
+            return success;
+        }
+
+        $(document).ready(function () {
+            $("#chkbt").on("click", function () {
+                var v = $("#usr").val();
+                if (v != "") {
+                    $.getJSON("/Home/CheckUser?un=" + v, function (d) {
+                        if (d == true)
+                            $("#chkp").text("Already Exist Try another");
+                        else
+                            $("#chkp").text("Correct");
+                    });
+                }
+                else
+                    alert("Enter username");
+            });
+        });
+    </script>
+</head>
+<body>
+   @* <div class="header">
+        <div id="img1" class="header">
+            <img src="~/Content/Images/gymlogo.jpg" />
+        </div>
+        <div id="form1" class="header">
+            <form method="post" action="/Home/Login" class="userId" onsubmit="return ValidateForm()">
+            Username<br />
+            <input placeholder="Username" type="text" name="Username" id="t1" /><span class="err"></span><br /><br />
+            Password<br />
+            <input placeholder="Password" type="password" name="Password" id="t2" /><span class="err"></span><br />
+            <a href="abc">Forget password?</a><br />
+            <input type="submit" value="login" id="b1" class="bt" />
+                </form>
+        </div>
+    </div>
+    <div class="bodyx">
+         <img id="imgbg" src="~/Content/Images/bg%20gym.jpg" />
+      <div class="bodyx1">
+    <div class="form-group">
+    <h1>Create Account</h1><br />
+            <form method="post" action="/Home/Register"  class="signId" onsubmit="return signForm()">
+            <input placeholder="Enter your Gym's Name" type="text" name="Gymname" class="mailbox" /><span class="err"></span><br /><br />
+            <input placeholder="Enter First Name" type="text" name="Fname" class="namebox" /><span class="err"></span>
+            <input placeholder="Enter Last Name" type="text" name="Lname" class="namebox" /><span class="err"></span><br /><br />
+            <input placeholder="Username" type="text" name="Username" class="mailbox" /><span class="err"></span><br /><br />
+            <input placeholder="Enter Password" id="pwd" type="password" name="Password" class="mailbox" /><span class="err"></span><br /><br />
+            <input placeholder="Re-Enter Password" id="repwd" type="password" name="conpwd" class="mailbox" /><span class="err"></span><br /><br />
+            <input placeholder="Enter CNIC No." type="text" name="Cnic" class="mailbox" /><span class="err"></span><br /><br />
+            <input placeholder="Enter Mobile No." type="tel" name="Cellno" class="mailbox" /><span class="err"></span><br /><br />
+            <input type="radio" name="Gender" value="Male" class="bt" />Male 
+            <input type="radio" name="Gender" value="Female" class="bt" />Female <br /><br />
+            <input type="submit" id="sub1" value="Register" class="bt" />
+            </form>
+        </div>
+    </div>*@
+
+    <div class="row">
+        <div class="col-md-7">
+            <div class="form-group">
+            <h1>Create Account</h1><br />
+            <form method="post" action="/Home/Register"  class="signId" onsubmit="return signForm()">
+            <input placeholder="Enter your Gym's Name" type="text" name="Gymname" class="mailbox" /><span class="err"></span><br /><br />
+            <input placeholder="Enter First Name" type="text" name="Fname" class="namebox" /><span class="err"></span>
+            <input placeholder="Enter Last Name" type="text" name="Lname" class="namebox" /><span class="err"></span><br /><br />
+            <input placeholder="Username" type="text" id="usr" name="Username" class="mailbox" /><p id="chkp"></p> <input type="button" id="chkbt" value="Check User" class="btn btn-success" /><span class="err"></span><br /><br />
+            <input placeholder="Enter Password" id="pwd" type="password" name="Password" class="mailbox" /><span class="err"></span><br /><br />
+            <input placeholder="Re-Enter Password" id="repwd" type="password" name="conpwd" class="mailbox" /><span class="err"></span><br /><br />
+            <input placeholder="Enter CNIC No." type="text" name="Cnic" class="mailbox" /><span class="err"></span><br /><br />
+            <input placeholder="Enter Mobile No." type="tel" name="Cellno" class="mailbox" /><span class="err"></span><br /><br />
+            <input type="radio" name="Gender" value="Male" class="bt" />Male 
+            <input type="radio" name="Gender" value="Female" class="bt" />Female <br /><br />
+            <input type="submit" id="sub1" value="Register" class="bt btn btn-success" />
+            </form>
+        </div>
+        </div>
+        <div class="col-xs-5">
+            <h1>Login</h1>
+            <div class="form-group">
+            <form method="post" action="/Home/Login" class="userId" onsubmit="return ValidateForm()">
+            Username<br />
+            <input placeholder="Username" type="text" name="Username" id="t1" /><span class="err"></span><br /><br />
+            Password<br />
+            <input placeholder="Password" type="password" name="Password" id="t2" /><span class="err"></span><br />
+            <a href="abc">Forget password?</a><br />
+            <input type="submit" value="login" id="b1" class="bt btn btn-success" />
+                </form>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

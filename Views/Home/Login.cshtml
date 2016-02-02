@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*<link href="~/Content/login.css" rel="stylesheet" />*@
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>Login</title>
+    <script src="~/Content/bootstrap.js"></script>
+</head>
+<body>
+     @*<div class="header">
+        <div id="img1" class="header">
+            <img src="~/Content/Images/gymlogo.jpg" />
+        </div>
+         <div id="form1" class="header">
+             <p id="head1">@ViewBag.x</p>
+             <a id="outbox" href="/Home/SignOut">Sign Out</a>
+         </div>
+     </div>
+    <div class="bodyx">
+        <img id="imgbg" src="~/Content/Images/login%20bg.jpg" />
+         <div class="bodyx1">
+             <img src="~/Content/Images/member.png" /><a class="linkSet" href="~/Home/addMember">Add new member</a><br /><br />
+             <img src="~/Content/Images/detailicon.png" /><a class="linkSet" href="~/Member/ViewUpdate">Update/View details</a><br /><br />
+             <img src="~/Content/Images/attendene.png" /><a class="linkSet" href="">Attendence</a><br /><br /><br /><br />
+             <img src="~/Content/Images/incom.png" /><a class="linkSet" href="">check your income</a><br /><br />
+             <img src="~/Content/Images/feeicon.png" /><a class="linkSet" href="">Fee submision</a>
+         </div>
+    </div>*@
+    <div class="row"><h1 style="text-align:center">@ViewBag.x</h1></div>
+    <div class="row">
+    <div class="col-md-3">
+    <div class="list-group">
+        <p class="list-group-item active">Menu</p>
+        <a class="list-group-item" href="~/Home/addMember">add new member</a>
+        <a class="list-group-item" href="~/Member/ViewUpdate">view/update details</a>
+        <a class="list-group-item" href="#">attendence</a>
+        <a class="list-group-item" href="#">check your income</a>
+        <a class="list-group-item" href="#">fee submision</a>
+    </div>
+    </div>
+    </div>
+</body>
+</html>

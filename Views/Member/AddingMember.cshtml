@@ -1,0 +1,67 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @*<link href="~/Content/Blackbackground.css" rel="stylesheet" />*@
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap.js"></script>
+    <title>AddingMember</title>
+</head>
+<body>
+    @* <div class="header">
+        <div id="img1" class="header">
+            <img src="~/Content/Images/gymlogo.jpg" />
+        </div>
+        <div id="form1" class="header">
+           <h1>@ViewBag.gymname</h1>
+        </div>
+    </div>
+    <div class="bodyx">
+        <div class="bodyx1">
+            <h1>Member's Detail</h1><br /><br />
+           Roll No.: @Model.Rollno<br /><br />
+           Name: @Model.Name<br /><br />
+           Address: @Model.Address<br /><br />
+           Fee: @Model.Fee<br /><br />
+           Entry Date: @Model.Date<br />
+         </div>
+         <div class="bodyx2">
+             <h1> </h1><br /><br /><br /><br /><br />
+           Fee Submit Date: @Model.Feedate<br /><br />
+           CNIC No.: @Model.Cnic<br /><br />
+           Cell No.: @Model.Cellno<br /><br />
+           Gender: @Model.Gender<br />
+         </div>
+        <div class="bodyx3">
+            <a href="/Member/AddMember">Click to Add Another Member</a><br /><br />
+            <a href="/Home/Login">Click to go Back Menu</a>
+        </div>
+    </div>*@
+
+    <div class="row"><h1 style="text-align:center">@ViewBag.gymname</h1><br />
+        <h1>Member's Detail</h1>
+    </div>
+    <div class="row" style="color:yellow">
+        <div class="col-md-6">
+           Roll No.: @Model.Rollno<br /><br />
+           Name: @Model.Name<br /><br />
+           Address: @Model.Address<br /><br />
+           Fee: @Model.Fee<br /><br />
+           Entry Date: @Model.Date<br />
+        </div>
+        <div class="col-xs-6">
+           Fee Submit Date: @Model.Feedate<br /><br />
+           CNIC No.: @Model.Cnic<br /><br />
+           Cell No.: @Model.Cellno<br /><br />
+           Gender: @Model.Gender<br />
+           <a href="/Member/AddMember">Click to Add Another Member</a><br /><br />
+           <a href="/Home/Login">Click to go Back Menu</a>
+        </div>
+    </div>
+</body>
+</html>

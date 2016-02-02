@@ -1,0 +1,94 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*<link href="~/Content/login.css" rel="stylesheet" />*@
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap.js"></script>
+    <title>AddMember</title>
+
+    <script>
+
+        $(document).ready(function () {
+            $("#br1").on("click", function () {
+               var v = $("#r1").val();
+               $.getJSON("/Member/AssignRollno?rn=" + v, function (v1) {
+                   $("#r1").val(v1);
+               });
+            });
+        });
+       
+
+            function signMem() {
+                $('span.err').html('');
+                var success = true;
+                $(".memId input").each(function () {
+                    if ($(this).val() == "") {
+                        $(this).next().html("please fill this feild");
+                        success = false;
+                    }
+                    else if (!$('input[name="Gender"]').is(':checked')) {
+                        alert("Please select Gender");
+                        success = false;
+                        return success;
+                    }
+                });
+                return success;
+            }
+    </script>
+</head>
+<body>
+   @* <div class="header">
+        <div id="img1" class="header">
+            <img src="~/Content/Images/gymlogo.jpg" />
+        </div>
+         <div id="form1" class="header">
+             <p id="head1">@ViewBag.x</p>
+         </div>
+     </div>
+    <div class="bodyx">
+        <img id="imgbg" src="~/Content/Images/admem.jpg" />
+         <div class="bodyx2">
+            <h1>Member Details</h1>
+             <form method="post" action="/Member/AddingMember" class="memId" onsubmit="return signMem()" >
+                Entry Date <input type="text" class="namebox" value="@System.DateTime.Now" name="Date" /><span class="err"></span><br /><br />
+                 <input type="text" readonly="hhh" placeholder="Enter Assign button to get UNIQUE Roll No." id="r1" class="mailbox" name="Rollno" /> <input type="button" value="assign new RollNo." id="br1"/><br /><br />
+                 <input type="text" placeholder="Enter Name" class="mailbox" name="Name" /><span class="err"></span><br /><br />
+                 <input type="text" placeholder="Enter Address" class="mailbox" name="Address" /><span class="err"></span><br /><br />
+                 <input type="text" placeholder="Enter Fee only amount" class="mailbox" name="Fee" /><span class="err"></span><br /><br />
+                 <input type="text" placeholder="Enter CNIC No." class="mailbox" name="Cnic" /><span class="err"></span><br /><br />
+                 <input type="text" placeholder="Enter Phone No." class="mailbox" name="Cellno" /><span class="err"></span><br /><br />
+                 <input type="radio" name="Gender" value="Male" />Male 
+                 <input type="radio" name="Gender" value="Female" />Female <br /><br />
+                 <input type="submit" value="Add member" />      
+
+             </form>
+         </div>
+    </div>*@
+    <div class="row"><h1 style="text-align:center">@ViewBag.x</h1></div>
+    <div class="row">
+        <div class="col-md-7 form-group">
+            <h1>Member Details</h1>
+             <form method="post" action="/Member/AddingMember" class="memId" onsubmit="return signMem()" >
+                Entry Date <input type="text" class="namebox" value="@System.DateTime.Now" name="Date" /><span class="err"></span><br /><br />
+                 <input type="text" readonly="hhh" placeholder="Roll No." id="r1" class="mailbox" name="Rollno" /> <input type="button" value="assign new RollNo." id="br1"/><br /><br />
+                 <input type="text" placeholder="Enter Name" class="mailbox" name="Name" /><span class="err"></span><br /><br />
+                 <input type="text" placeholder="Enter Address" class="mailbox" name="Address" /><span class="err"></span><br /><br />
+                 <input type="text" placeholder="Enter Fee only amount" class="mailbox" name="Fee" /><span class="err"></span><br /><br />
+                 <input type="text" placeholder="Enter CNIC No." class="mailbox" name="Cnic" /><span class="err"></span><br /><br />
+                 <input type="text" placeholder="Enter Phone No." class="mailbox" name="Cellno" /><span class="err"></span><br /><br />
+                 <input type="radio" name="Gender" value="Male" />Male 
+                 <input type="radio" name="Gender" value="Female" />Female <br /><br />
+                 <input type="submit" value="Add member" class="btn btn-success" />      
+
+             </form>
+        </div>
+    </div>
+</body>
+</html>
