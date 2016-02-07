@@ -1,0 +1,36 @@
+﻿@model List<GymManagementSystem.ImageGallery>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Gallery</title>
+</head>
+<body>
+    <div>
+        <p>
+            @Html.ActionLink("Upload New", "Upload")
+        </p>
+        <table>
+            @{
+                int j = 0;
+                while(j < Model.Count())
+                {
+                    <tr>
+                        <td>
+                        <img src="data:image/png;base64,@Convert.ToBase64String(Model[j].ImageData,0,Model[j].ImageData.Length)" width="1000" />
+                    </td>
+
+                    </tr>
+                    j++;
+                }
+            }
+        </table>
+    </div>
+</body>
+</html>
