@@ -4,7 +4,8 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>@ViewBag.title</title>
+    <link rel="icon" type="image/png" href="~/Content/Images/icongym.png" />
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <script src="~/Content/bootstrap.js"></script>
 </head>
@@ -18,7 +19,7 @@
       <div>
            <ul class="nav navbar-nav">
                <li class="active">
-                   <a href="#">Home</a>
+                   <a href="~/Home/Index">Home</a>
                </li>
                <li><a href="~/Home/Menu">Menu</a></li>
                <li><a href="#">video tutorials</a></li>
@@ -35,14 +36,14 @@
     <div class="row">
         <div class="col-md-3">
             <div class="list-group">
-                <a href="#" class="list-group-item active">Exercise schedule</a>
-                <a href="#" class="list-group-item">Monday</a>
-                <a href="#" class="list-group-item">Tuesday</a>
-                <a href="#" class="list-group-item">Wednesday</a>
-                <a href="#" class="list-group-item">Thursday</a>
-                <a href="#" class="list-group-item">Friday</a>
-                <a href="#" class="list-group-item">Saturday</a>
-                <a href="#" class="list-group-item">Sunday</a>
+                <a class="list-group-item active">Exercise schedule</a>
+                <a href="~/Home/Monday" class="list-group-item">Monday</a>
+                <a href="~/Home/Tuesday" class="list-group-item">Tuesday</a>
+                <a href="~/Home/Wednesday" class="list-group-item">Wednesday</a>
+                <a href="~/Home/Thursday" class="list-group-item">Thursday</a>
+                <a href="~/Home/Friday" class="list-group-item">Friday</a>
+                <a href="~/Home/Saturday" class="list-group-item">Saturday</a>
+                <a href="~/Home/Sunday" class="list-group-item">Sunday</a>
             </div>
         </div>
         <div style="background-image:url(/Content/Images/bg%20gym.jpg); color:greenyellow" class="col-xs-9 img-responsive">
