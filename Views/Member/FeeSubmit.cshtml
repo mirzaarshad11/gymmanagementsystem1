@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FeeSubmit</title>
+</head>
+<body>
+     <div class="row" style="text-align:center">
+        <h1>@ViewBag.gymname</h1><br />
+        <h1>Fee Submision</h1>
+    </div>
+    <div class="row form-group" style="text-align:center">
+        <br /><br />
+            <form method="post" action="/Member/Submitted">
+            <input type="text" name="Rollno" placeholder="Enter Roll No." class="mailbox" />
+                  <input type="text" name="Fee" placeholder="Enter Amount" class="mailbox" />
+                <br /><br /><br />
+                <br /><br />
+            <input type="submit" value="Submit" class="btn btn-success" />
+            </form>
+    </div>
+</body>
+</html>

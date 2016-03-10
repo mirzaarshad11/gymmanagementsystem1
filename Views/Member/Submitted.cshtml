@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Submitted</title>
+</head>
+<body>
+    <div class="row" style="text-align:center">
+        <h1>@ViewBag.gymname</h1>
+    </div>
+    <div class="row">
+            <h1>@ViewBag.upd</h1><br /><br /><br />
+        <br /><br /><br /><br />
+            <a href="/Member/FeeSubmit">Fee submission of another member</a><br /><br />
+            <a href="/Home/Login">Go to Menu</a>
+    </div>
+</body>
+</html>
