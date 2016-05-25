@@ -41,27 +41,9 @@
         <a class="list-group-item" href="~/Member/ViewUpdate">view/update details</a>
         <a class="list-group-item" href="#">attendence</a>
         <a class="list-group-item" href="#">check your income</a>
-        <a class="list-group-item" href="~/Member/FeeSubmit">fee submision</a>
+        <a class="list-group-item" href="#">fee submision</a>
     </div>
     </div>
-        <div class="col-xs-3"></div>
-        <div class="col-xs-3">
-            <table>
-                <tr>
-                    <td><h2>Total Members: @ViewBag.z</h2></td>
-                </tr>
-                <tr>
-                    <td><h3>Fee Defaulter List</h3></td>
-                </tr>
-                @foreach (var j in ViewBag.all)
-                {
-                    <tr>
-                        <td>@j.Rollno- @j.Name</td>
-                        
-                    </tr>
-                }
-            </table>
-        </div>
     </div>
 </body>
 </html>

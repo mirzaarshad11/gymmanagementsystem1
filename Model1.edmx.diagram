@@ -4,13 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c53763f0d3ed45ab8f7d8a66d012489c" Name="Diagram1">
-        <EntityTypeShape EntityType="Database1Model.Attendence" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.ImageGallery" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.MemberData" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.UserData" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
-        <AssociationConnector Association="Database1Model.FK_att" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.fk_mem" ManuallyRouted="false" />
+      <Diagram DiagramId="c28ebfc0876149bda2cd692c0a00e9cc" Name="Diagram1">
+        <EntityTypeShape EntityType="Database1Model1.ImageGallery" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model1.MemberData" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model1.UserData" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="Database1Model1.FK_mgr" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

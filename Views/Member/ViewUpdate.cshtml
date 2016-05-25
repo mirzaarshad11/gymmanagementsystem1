@@ -1,6 +1,5 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.title = "View/Update details";
 }
 
 <!DOCTYPE html>
@@ -9,23 +8,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     @*<link href="~/Content/Blackbackground.css" rel="stylesheet" />*@
-    <script src="~/Scripts/jquery-1.7.1.js"></script>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <script src="~/Content/bootstrap.js"></script>
-    
-    <script>
-        function ValidateForm() {
-            $('span.err').html('');
-            var success = true;
-            $(".userId input").each(function () {
-                if ($(this).val() == "") {
-                    $(this).next().html("please fill this feild");
-                    success = false;
-                }
-            });
-            return success;
-        }
-    </script>
+    <title>ViewUpdate</title>
 </head>
 <body>
     @*<div class="header">
@@ -54,8 +39,8 @@
     </div>
     <div class="row form-group" style="text-align:center">
         <br /><br />
-            <form method="post" action="/Member/ViewDetails" class="userId" onsubmit="return ValidateForm()">
-            <input type="text" name="Rollno" placeholder="Enter Roll No." class="mailbox" /><span class="err"></span>
+            <form method="post" action="/Member/ViewDetails">
+            <input type="text" name="Rollno" placeholder="Enter Roll No." class="mailbox" /> 
                 <br /><br /><br />
                 <br /><br />
             <input type="submit" value="Check/Update Details" class="btn btn-success" />
